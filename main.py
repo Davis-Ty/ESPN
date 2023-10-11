@@ -2,13 +2,13 @@ from selenium import webdriver
 from scrape_players_and_stats import *
 import requests
 
-def main(url, webdriver_path):
+def main(url, webdriver_path,name,name2, name3):
     # Initialize WebDriver
     driver = webdriver.Chrome()
     driver.get(url)
 
     try:
-        scrape_players_and_stats(driver, url, webdriver_path)
+        scrape_players_and_stats(driver, url, webdriver_path,name,name2, name3)
     finally:
         # Close the WebDriver when done
         driver.quit()
@@ -30,10 +30,17 @@ if __name__ == "__main__":
     
     scoring_url='https://www.espn.com/college-football/stats/player/_/view/scoring'
     
+    
     urls=[passing_url,
     rushing_url,receiving_url,defense_url,special_return_url,kick_url, punting_url,scoring_url]
     
     webdriver_path = 'E:/chromedriver_win32/chromedriver.exe'
+    name='Shedeur Sanders'
+    name2='Austin Smith'
+    name3='Grant Wilson'
     
-    for url in urls:
-        main(url, webdriver_path)
+    
+    #for url in urls:
+     #   main(url, webdriver_path, name,name2, name3)
+     
+    main(passing_url, webdriver_path, name,name2, name3)

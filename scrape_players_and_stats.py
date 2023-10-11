@@ -2,12 +2,14 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from passing_ml import *
 from scrape_header import *
+from week_finder import *
 import time
 
 
 
-def scrape_players_and_stats(driver, url, webdriver_path):
+def scrape_players_and_stats(driver, url, webdriver_path,name,name2, name3):
     # Rest of the code for scraping player names and stats
     # Click "Show More" repeatedly until it's not available
     while True:
@@ -22,11 +24,14 @@ def scrape_players_and_stats(driver, url, webdriver_path):
     # Scrape player names and stats from the fully loaded page
     soup = BeautifulSoup(driver.page_source, 'lxml')
     players_chart = soup.find(class_='Table__TBODY')
-    
+    school_chart = soup.find( class_='Table__TBODY')
     # Scrape player names
     player_tags = players_chart.find_all('a')
     players = [tag.get_text() for tag in player_tags]
     
+    # Scrape school names
+    school_tags = school_chart.find_all('span')
+    schools = [tag_s.get_text() for tag_s in school_tags]
     # Scrape player stats
     tbody_elements = soup.find_all(class_='Table__TBODY')
     header=scrape_header(driver)
@@ -39,7 +44,8 @@ def scrape_players_and_stats(driver, url, webdriver_path):
         num_headers = len(header)
         grouped_stats_dict = {header[i]: [] for i in range(0,num_headers)}
         header_index=-1
-        print(grouped_stats_dict)
+        
+        
         for index, td_element in enumerate(td_elements):
             player_stat = td_element.get_text()
             header_index=header_index+1
@@ -50,16 +56,8 @@ def scrape_players_and_stats(driver, url, webdriver_path):
             else:
                 grouped_stats_dict[header[header_index]].append([player_stat])
                 
+        if url == 'https://www.espn.com/college-football/stats/player':
+            passing_ml(get_college_football_week(),players,schools,grouped_stats_dict,name,name2, name3)
         
-        i=-1
-        # Iterate through each name in the list
-        for player in players:
-            i=i+1
-            print(f"Player: {player}")
 
-            # Iterate through each key-value pair in the dictionary
-            for key, value in grouped_stats_dict.items():
-                print(f"  {key}: {value[i]} ")
-
-            print()  # Add a newline after printing all key-value pairs for a name
                 
