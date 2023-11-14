@@ -2,14 +2,15 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from passing_ml import *
+from UpdateCSV import *
 from scrape_header import *
 from week_finder import *
+from get_url import *
 import time
 
 
 
-def scrape_players_and_stats(driver, url, webdriver_path,name,name2, name3):
+def scrape_players_and_stats(driver, url, webdriver_path):
     # Rest of the code for scraping player names and stats
     # Click "Show More" repeatedly until it's not available
     while True:
@@ -25,6 +26,7 @@ def scrape_players_and_stats(driver, url, webdriver_path,name,name2, name3):
     soup = BeautifulSoup(driver.page_source, 'lxml')
     players_chart = soup.find(class_='Table__TBODY')
     school_chart = soup.find( class_='Table__TBODY')
+    
     # Scrape player names
     player_tags = players_chart.find_all('a')
     players = [tag.get_text() for tag in player_tags]
@@ -55,9 +57,25 @@ def scrape_players_and_stats(driver, url, webdriver_path,name,name2, name3):
                 grouped_stats_dict[header[header_index]].append([player_stat])         
             else:
                 grouped_stats_dict[header[header_index]].append([player_stat])
-                
-        if url == 'https://www.espn.com/college-football/stats/player':
-            passing_ml(get_college_football_week(),players,schools,grouped_stats_dict,name,name2, name3)
+    
+    #saving player data to csv
+    urls=get_url() 
+    
+    if url == urls[0]:
+            name="data/passing.csv"
+            UpdateCSV(players,schools,grouped_stats_dict,name)
+            
+    elif url == urls[1]:
+            name="data/rushing.csv"
+            UpdateCSV(players,schools,grouped_stats_dict,name)
+            
         
-
-                
+    elif url == urls[2]:
+            name="data/receiving.csv"
+            UpdateCSV(players,schools,grouped_stats_dict,name)
+            
+        
+    elif url == urls[3]:
+            name="data/defense.csv" 
+            UpdateCSV(players,schools,grouped_stats_dict,name)
+    

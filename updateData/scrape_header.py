@@ -7,3 +7,5 @@ def scrape_header(driver):
     stat_header = [g.get_text() for g in tags]
     stat_header.insert(0, 'POS')
     return stat_header
+
+    
