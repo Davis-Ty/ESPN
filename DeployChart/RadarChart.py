@@ -203,6 +203,22 @@ def update_chart(selected_stat, scale_value):
 
     return fig
 
+
 # Run the app
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=True, port=8050)
+
+    # Save the app to an HTML file
+    file_path = r'/espn/index.html'  # Replace this with your desired path
+    app.write_html(file_path)
+
+    # Read the existing HTML file and insert the iframe
+    with open(file_path, 'r') as file:
+        existing_html = file.read()
+
+    dash_iframe = '<iframe src="http://127.0.0.1:8050/" width="100%" height="600px"></iframe>'
+    updated_html = existing_html.replace('<!-- The iframe will be inserted here -->', dash_iframe)
+
+    # Write the updated HTML back to the file
+    with open(file_path, 'w') as file:
+        file.write(updated_html)
