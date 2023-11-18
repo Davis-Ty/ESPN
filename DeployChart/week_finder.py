@@ -17,4 +17,4 @@ def get_college_football_week():
         college_football_week=16
         
 
-    return college_football_week-1
+    return college_football_week-2

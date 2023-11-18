@@ -83,3 +83,6 @@ def IntBySchool(t1, t2, t3, t4, t5, t6):
 
     # Show the interactive plot
     fig.show()
+    # Display the interactive plot
+    fig.write_html("/ESPN/IntFig.html")
+    return fig

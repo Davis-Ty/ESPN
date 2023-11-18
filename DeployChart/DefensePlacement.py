@@ -34,3 +34,6 @@ def TotHist():
 
     # Show the interactive plot
     fig.show()
+    # Display the interactive plot and create/override the file
+    fig.write_html("/ESPN/TotHistFig.html")
+    return fig

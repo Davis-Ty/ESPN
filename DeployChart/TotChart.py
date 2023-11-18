@@ -73,3 +73,6 @@ def TotPlacement(t1, t2, t3, t4, t5, t6):
 
     # Display the interactive plot
     fig.show()
+    # Display the interactive plot
+    fig.write_html("/ESPN/TotFig.html")
+    return fig

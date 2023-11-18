@@ -6,7 +6,7 @@ from week_finder import *
 def RushLeader_Score_Diff(team1,team2):
     # Define the range of weeks you want to consider
     start_week = 0
-    end_week = get_college_football_week() - 2
+    end_week = get_college_football_week() - 1
 
     # Create an empty list to store DataFrames for each team
     selected_teams_rushing_leader = []
@@ -44,3 +44,5 @@ def RushLeader_Score_Diff(team1,team2):
 
     # Show the plot for PassingLeaderScore over weeks for selected teams with 'vs' and 'Team' in the hover tooltip
     fig_selected_teams.show()
+    # Display the interactive plot
+    fig_selected_teams.write_html("/ESPN/RunningFig.html")

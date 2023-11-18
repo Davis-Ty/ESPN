@@ -49,3 +49,6 @@ def Score_Diff(away_team1,away_team2 ):
 
     # Show the plot
     fig.show()
+    # Display the interactive plot
+    fig.write_html("/ESPN/ScoreFig.html")
+    return fig
