@@ -16,7 +16,7 @@ Thematically, the application employs football-inspired colors, utilizing green 
 Identify specific defensive areas where teams excel or struggle, offering crucial insights into their strengths and weaknesses.
 - Player Performance:
 
-Evaluate individual player contributions to defensive statistics, enabling teams and coaches to recognize standout performers and areas for improvement.
+Evaluate individual player contributions to leading Offensive statistics, enabling teams and coaches to recognize standout performers and areas for improvement.
 - Tactical Adjustments:
 
 Coaches can use the detailed defensive metrics to make informed tactical adjustments, optimizing strategies based on the strengths and weaknesses revealed in the data.
@@ -26,12 +26,7 @@ Gain a competitive edge by studying the defensive performance of upcoming oppone
 - Game Predictions:
 
 Leverage historical defensive data to make predictions about future games. Analyzing trends and patterns can contribute to more accurate forecasts of team performance.
-- Draft and Recruitment Strategies:
 
-Teams and recruiters can use the analytics to identify players with strong defensive capabilities, aiding in draft selections and recruitment strategies.
-- Injury Prevention:
-
-Recognize patterns in defensive metrics that may correlate with player fatigue or injury risk. This information can contribute to injury prevention strategies and player management.
 - Fan Engagement:
 
 Enhance fan engagement by providing visual and easily understandable defensive statistics. Fans can gain deeper insights into their favorite team's performance and engage in data-driven discussions.
