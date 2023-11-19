@@ -27,7 +27,7 @@ Gain a competitive edge by studying the defensive performance of upcoming oppone
 
 Leverage historical defensive data to make predictions about future games. Analyzing trends and patterns can contribute to more accurate forecasts of team performance.
 
-- Fan Engagement:
+-  Fan Engagement:
 
 Enhance fan engagement by providing visual and easily understandable defensive statistics. Fans can gain deeper insights into their favorite team's performance and engage in data-driven discussions.
 - Overall Team Performance:
