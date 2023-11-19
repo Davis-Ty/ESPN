@@ -1,10 +1,4 @@
 # ESPN Data and Visual Analytics
-# DESCRIPTION *
-# INSTALLATION *
-# EXECUTION *
-# TESTBED
- View the ESPN.football.ipynb file 
- # Questions that can be answered from the testbed
 # Team Members
 - Tyon Davis
 - Kairee Gay
