@@ -15,7 +15,11 @@ After downloading, you may need to add the ChromeDriver executable to your syste
 - pip install dash-bootstrap-components
 - pip install requests
 
-# EXECUTION *
+# EXECUTION 
+- After installing all needed elements
+- Run espn/updateData/main.py To update data to current information.
+- Run 
+  
 # TESTBED
  View the ESPN.football.ipynb file 
  # Questions that can be answered from the testbed
