@@ -18,7 +18,7 @@ After downloading, you may need to add the ChromeDriver executable to your syste
 # EXECUTION 
 - After installing all needed elements
 - Run espn/updateData/main.py To update data to current information.
-- Run 
+- Run espn/DeployChart/RadarChart.py To deploy D3 Chart.
   
 # TESTBED
  View the ESPN.football.ipynb file 
