@@ -57,7 +57,9 @@ After downloading, you may need to add the ChromeDriver executable to your syste
 - Run espn/DeployChart/RadarChart.py To deploy D3 Chart.
   
 # TESTBED
- View the ESPN.football.ipynb file 
+ - [View the ESPN.football.ipynb file ](https://github.com/Kaireega/ESPN-WebScraping/blob/codespace-shiny-potato-grxp46qwg4v3j7g/ESPN.football.ipynb)
+ - or
+   - Run espn/DeployChart/RadarChart.py To deploy D3 Chart
  # Questions that can be answered from the testbed
  - Overall Defensive Performance:
 
