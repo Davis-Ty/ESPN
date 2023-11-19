@@ -1,6 +1,21 @@
 # ESPN Data and Visual Analytics
 # DESCRIPTION *
-# INSTALLATION *
+# INSTALLATION 
+Chrome:
+
+Download ChromeDriver from the official site: ChromeDriver Downloads.
+Make sure to download the version that matches your Chrome browser version.
+After downloading, you may need to add the ChromeDriver executable to your system's PATH or provide the path to it in your Selenium script.
+
+pip install Flask
+pip install beautifulsoup4
+pip install selenium
+pip install pandas
+pip install plotly
+pip install dash
+pip install dash-bootstrap-components
+pip install requests
+
 # EXECUTION *
 # TESTBED
  View the ESPN.football.ipynb file 
