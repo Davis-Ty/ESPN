@@ -114,11 +114,8 @@ This is a detailed description of what we did, what results we obtained, and wha
 
 [5%] Survey
 
-- Proposed method
   
-[10%] Intuition - why should it be better than the state of the art?
 
-[35%] Description of your approaches: algorithms, user interfaces, etc.
 
 - Experiments/ Evaluation
   
