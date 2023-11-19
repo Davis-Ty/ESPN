@@ -13,7 +13,8 @@ def setDriver():
         urls=get_url()
         vs_url=vs_who_url()
         # Initialize WebDriver
-        #put youre chrome driver path
+        
+        #put your chrome driver path
         webdriver_path = 'E:/chromedriver_win32/chromedriver.exe'
        
         driver = webdriver.Chrome()

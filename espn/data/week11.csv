@@ -1,69 +1,69 @@
-Away Team,Home Team,Time,TV,Tickets
-Toledo,@Bowling Green,7:00 PM,,Tickets as low as $15
-Western Michigan,@Northern Illinois,7:00 PM,,Tickets as low as $3
-Akron,@Eastern Michigan,7:00 PM,CBSSN,Tickets as low as $10
-Central Michigan,@Ohio,7:00 PM,,Tickets as low as $2
-Buffalo,@Miami (OH),7:00 PM,,Tickets as low as $8
-Boston College,@Pittsburgh,7:00 PM,,Tickets as low as $5
-South Florida,@UTSA,9:00 PM,,Tickets as low as $6
-Colorado,@Washington State,10:30 PM,FS1,Tickets as low as $40
-3Michigan,@Maryland,12:00 PM,FOX,Tickets as low as $71
-Chattanooga,@8Alabama,12:00 PM,,Tickets as low as $10
-UL Monroe,@9Ole Miss,12:00 PM,,Tickets as low as $2
-Rutgers,@10Penn State,12:00 PM,FS1,Tickets as low as $11
-11Louisville,@Miami,12:00 PM,,Tickets as low as $7
-17Oklahoma,@BYU,12:00 PM,,Tickets as low as $29
-23Tulane,@Florida Atlantic,12:00 PM,,Tickets as low as $17
-Coastal Carolina,@Army,12:00 PM,CBSSN,Tickets as low as $26
-Michigan State,@Indiana,12:00 PM,BTN,Tickets as low as $9
-Southern Miss,@Mississippi State,12:00 PM,,Tickets as low as $4
-Purdue,@Northwestern,12:00 PM,BTN,Tickets as low as $8
-Abilene Christian,@Texas A&M,12:00 PM,,Tickets as low as $42
-Sacred Heart,@UConn,12:00 PM,,Tickets as low as $5
-East Carolina,@Navy,12:00 PM,,Tickets as low as $26
-SMU,@Memphis,12:00 PM,,Tickets as low as $14
-Massachusetts,@Liberty,1:00 PM,,Tickets as low as $17
-Louisiana Tech,@Jacksonville State,2:00 PM,,Tickets as low as $16
-UTEP,@Middle Tennessee,2:00 PM,,Tickets as low as $9
-Rice,@Charlotte,2:00 PM,,Tickets as low as $9
-Appalachian State,@James Madison,2:00 PM,,Tickets as low as $214
-Kent State,@Ball State,2:00 PM,,Tickets as low as $14
-Hawai'i,@Wyoming,2:00 PM,,Tickets as low as $10
-18Utah,@21Arizona,2:30 PM,PAC12,Tickets as low as $15
-Cincinnati,@West Virginia,2:30 PM,BIG12|ESPN+,Tickets as low as $41
-Duke,@Virginia,3:00 PM,CW NETWORK,Tickets as low as $17
-North Texas,@Tulsa,3:00 PM,,Tickets as low as $2
-Temple,@UAB,3:00 PM,,Tickets as low as $17
-Texas State,@Arkansas State,3:00 PM,,Tickets as low as $19
-Nevada,@Colorado State,3:00 PM,,Tickets as low as $16
-2Georgia,@13Tennessee,3:30 PM,CBS,Tickets as low as $160
-Wake Forest,@20Notre Dame,3:30 PM,NBC,Tickets as low as $39
-Illinois,@22Iowa,3:30 PM,FS1,Tickets as low as $29
-24North Carolina,@Clemson,3:30 PM,,Tickets as low as $17
-Sam Houston,@Western Kentucky,3:30 PM,,Tickets as low as $7
-UCLA,@USC,3:30 PM,,Tickets as low as $90
-NC State,@Virginia Tech,3:30 PM,,Tickets as low as $33
-Baylor,@TCU,3:30 PM,BIG12|ESPN+,Tickets as low as $25
-Louisiana,@Troy,3:30 PM,NFL NET,Tickets as low as $13
-UNLV,@Air Force,3:30 PM,CBSSN,Tickets as low as $18
-Minnesota,@1Ohio State,4:00 PM,BTN,Tickets as low as $31
-6Oregon,@Arizona State,4:00 PM,FOX,Tickets as low as $20
-15Oklahoma State,@Houston,4:00 PM,,Tickets as low as $4
-New Mexico State,@Auburn,4:00 PM,,Tickets as low as $10
-UCF,@Texas Tech,5:00 PM,FS2,Tickets as low as $9
-Marshall,@South Alabama,5:00 PM,,Tickets as low as $14
-Old Dominion,@Georgia Southern,6:00 PM,,Tickets as low as $10
-North Alabama,@4Florida State,6:30 PM,CW NETWORK,Tickets as low as $27
-California,@Stanford,6:30 PM,PAC12,Tickets as low as $64
-25Kansas State,@16Kansas,7:00 PM,FS1,Tickets as low as $75
-Boise State,@Utah State,7:00 PM,CBSSN,Tickets as low as $29
-5Washington,@12Oregon State,7:30 PM,,Tickets as low as $199
-Florida,@14Missouri,7:30 PM,,Tickets as low as $35
-Florida International,@Arkansas,7:30 PM,,Tickets as low as $4
-Kentucky,@South Carolina,7:30 PM,,Tickets as low as $30
-Nebraska,@Wisconsin,7:30 PM,NBC,Tickets as low as $11
-7Texas,@Iowa State,8:00 PM,FOX,Tickets as low as $24
-Georgia State,@19LSU,8:00 PM,,Tickets as low as $5
-Syracuse,@Georgia Tech,8:00 PM,,Tickets as low as $16
-New Mexico,@Fresno State,10:30 PM,FS1,Tickets as low as $30
-San Diego State,@San José State,10:30 PM,CBSSN,Tickets as low as $26
+Team,Opo Team,Away Team,Away Team Score,Home Team,Home Team Score,PassingLeader,PassingLeaderScore,RushingLeader,RushingLeaderScore
+Toledo,@Bowling Green,TOL,32,BGSU,31,Connor Bazelak,286,Peny Boone,131
+Western Michigan,@Northern Illinois,NIU,24,WMU,0,Hayden Wolff,182,Antario Brown,159
+Akron,@Eastern Michigan,EMU,30,AKR,27,Samson Evans,71,Zayat,92
+Central Michigan,@Ohio,OHIO,34,CMU,20,Kurtis Rourke,222,Sieh Bangura,126
+Buffalo,@Miami (OH),M,23,BUFF,10,Aveon Smith,146,Rashad Amos,82
+Boston College,@Pittsburgh,PITT,24,BC,16,Nate Yarnell,207,Bub Means,78
+South Florida,@UTSA,UTSA,49,USF,21,Frank Harris,411,Frank Harris,112
+Colorado,@Washington State,WSU,56,COLO,14,Cameron Ward,288,veon Wilkerson,49
+1Georgia,@18Tennessee,UGA,38,TENN,10,Carson Beck,298,Jaylen Wright,90
+Minnesota,@2Ohio State,OSU,37,MINN,3,Kyle McCord,212,TreVeyon Henderson,146
+3Michigan,@Maryland,MICH,31,MD,24,Taulia Tagovailoa,247,Blake Corum,94
+North Alabama,@4Florida State,FSU,58,UNA,13,Tate Rodemaker,217,Jaheim Bell,59
+5Washington,@11Oregon State,WASH,22,ORST,20,DJ Uiagalelei,164,Damien Martinez,123
+6Oregon,@Arizona State,ORE,49,ASU,13,Bo Nix,404,Bucky Irving,63
+7Texas,@Iowa State,TEX,26,ISU,16,Rocco Becht,323,CJ Baxter,117
+Chattanooga,@8Alabama,ALA,66,UTC,10,Jalen Milroe,197,Gino Appleberry,104
+Florida,@9Missouri,MIZ,33,FLA,31,Brady Cook,331,Cody Schrader,148
+10Louisville,@Miami,LOU,38,MIA,31,Tyler Van Dyke,327,Xavier Restrepo,193
+Rutgers,@12Penn State,PSU,27,RUTG,6,Gavin Wimsatt,130,Beau Pribula,71
+UL Monroe,@13Ole Miss,MISS,35,ULM,3,Jaxson Dart,310,Hunter Smith,74
+14Oklahoma,@BYU,OU,31,BYU,24,Dillon Gabriel,191,Aidan Robbins,182
+Georgia State,@15LSU,LSU,56,GAST,14,Jayden Daniels,413,Jayden Daniels,96
+Illinois,@16Iowa,IOWA,15,ILL,13,John Paddock,215,Reggie Love III,64
+22Utah,@17Arizona,ARIZ,42,UTAH,18,Bryson Barnes,320,Jonah Coleman,90
+Wake Forest,@19Notre Dame,ND,45,WAKE,7,Sam Hartman,277,Audric Estime,115
+20North Carolina,@Clemson,CLEM,31,UNC,20,Cade Klubnik,219,Omarion Hampton,178
+21Kansas State,@25Kansas,KSU,31,KU,27,Will Howard,165,Devin Neal,138
+23Oklahoma State,@Houston,OKST,43,HOU,30,Alan Bowman,348,Ollie Gordon II,164
+24Tulane,@Florida Atlantic,TULN,24,FAU,8,Michael Pratt,252,Makhi Hughes,72
+Coastal Carolina,@Army,ARMY,28,CCU,21,Jarrett Guest,279,Tyson Riley,112
+Michigan State,@Indiana,MSU,24,IU,21,Katin Houser,245,Trent Howland,77
+Southern Miss,@Mississippi State,MSST,41,USM,20,Will Rogers,144,Jeffery Pittman,98
+Purdue,@Northwestern,NU,23,PUR,15,Ben Bryant,230,Cam Johnson,88
+Abilene Christian,@Texas A&M,TA,38,ACU,10,Jaylen Henderson,260,Rueben Owens,106
+Sacred Heart,@UConn,CONN,31,SHU,3,Quan Roberson,201,Camryn Edwards,90
+East Carolina,@Navy,NAVY,10,ECU,0,Alex Flinn,155,Alex Tecza,94
+SMU,@Memphis,SMU,38,MEM,34,Seth Henigan,402,Roc Taylor,146
+Massachusetts,@Liberty,LIB,49,MASS,25,Taisun Phommachanh,239,Kaidon Salter,118
+Louisiana Tech,@Jacksonville State,JVST,56,LT,17,Hank Bachmeier,198,Malik Jackson,193
+UTEP,@Middle Tennessee,MTSU,34,UTEP,30,Cade McConnell,364,Nicholas Vattiato,92
+Rice,@Charlotte,RICE,28,CLT,7,AJ Padgett,140,Dean Connors,184
+Appalachian State,@James Madison,APP,26,JMU,23,Joey Aguilar,318,Ty Son Lawton,37
+Kent State,@Ball State,BALL,34,KENT,3,Kiael Kelly,71,Marquez Cooper,140
+Hawai'i,@Wyoming,WYO,42,HAW,9,Andrew Peasley,319,Harrison Waylee,70
+Cincinnati,@West Virginia,WVU,42,CIN,21,Garrett Greene,210,Jahiem White,204
+Duke,@Virginia,UVA,30,DUKE,27,Anthony Colandrea,278,Jaquez Moore,100
+North Texas,@Tulsa,UNT,35,TLSA,28,Chandler Rogers,294,Oscar Adaway III,126
+Temple,@UAB,UAB,34,TEM,24,Warner,323,Dante Wright,146
+Texas State,@Arkansas State,ARST,77,TXST,31,TJ Finley,366,Quez Cross,139
+Nevada,@Colorado State,CSU,30,NEV,20,Nicolosi,245,Justin Marshall,98
+Sam Houston,@Western Kentucky,WKU,28,SHSU,23,Austin Reed,392,Elijah Young,55
+UCLA,@USC,UCLA,38,USC,20,Caleb Williams,384,TJ Harden,142
+NC State,@Virginia Tech,NCSU,35,VT,28,Kyron Drones,225,Brennan Armstrong,89
+Baylor,@TCU,TCU,42,BAY,17,Josh Hoover,412,Dominic Richardson,66
+Louisiana,@Troy,TROY,31,UL,24,Chandler Fields,282,Kimani Vidal,112
+UNLV,@Air Force,UNLV,31,AFA,27,Jayden Maiava,339,Dylan Carson,104
+New Mexico State,@Auburn,NMSU,31,AUB,10,Diego Pavia,201,Star Thomas,67
+UCF,@Texas Tech,TTU,24,UCF,23,Behren Morton,256,Tahj Brooks,182
+Marshall,@South Alabama,USA,28,MRSH,0,Carter Bradley,176,Damian Webb,117
+Old Dominion,@Georgia Southern,ODU,20,GASO,17,Davis Brin,235,Jalen White,74
+California,@Stanford,CAL,27,STAN,15,Fernando Mendoza,294,Jaydn Ott,166
+Boise State,@Utah State,BOIS,45,USU,10,Cooper Legas,128,George Holani,178
+Florida International,@Arkansas,ARK,44,FIU,20,Keyone Jenkins,265,Isaiah Augustave,101
+Kentucky,@South Carolina,SC,17,UK,14,Spencer Rattler,207,Ray Davis,61
+Nebraska,@Wisconsin,WIS,24,NEB,17,Chubba Purdy,169,Chubba Purdy,105
+Syracuse,@Georgia Tech,GT,31,SYR,22,Haynes King,138,LeQuint Allen,120
+New Mexico,@Fresno State,UNM,25,FRES,17,Logan Fife,125,Merritt,204
+San Diego State,@San José State,SJSU,24,SDSU,13,Chevan Cordeiro,174,Quali Conley,155
