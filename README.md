@@ -64,6 +64,33 @@ After downloading, you may need to add the ChromeDriver executable to your syste
 # TESTBED
  View the ESPN.football.ipynb file 
  # Questions that can be answered from the testbed
+ - Overall Defensive Performance:
+
+Which teams have the strongest overall defensive performance based on aggregated statistics?
+- Category-specific Insights:
+
+What teams excel in specific defensive categories, such as Solo Tackles, Sacks, Interceptions, or Forced Fumbles?
+-Comparative Analysis:
+
+How do two selected teams compare in terms of overall defensive performance and specific defensive categories?
+- Opponent Vulnerabilities:
+
+What defensive weaknesses do upcoming opponents exhibit, and how can these be exploited strategically?
+-Threshold Analysis:
+
+Which teams meet or exceed a user-defined threshold for a specific defensive category, and how does this impact their overall performance?
+- Game-specific Insights:
+
+How does a team's defensive performance vary from game to game, and are there patterns related to specific opponents?
+
+-Fan Engagement:
+
+What defensive statistics are most engaging for fans, and how can the program enhance fan understanding and interaction with the team's performance?
+-
+
+
+
+
 # Team Members
 - Tyon Davis
 - Kairee Gay
