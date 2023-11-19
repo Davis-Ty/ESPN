@@ -34,7 +34,7 @@ def TotPlacement(t1, t2, t3, t4, t5, t6):
     )
 
     # Add vertical lines and annotations for each team's total tackles
-    team_colors = {'red': t1, 'black': t2, 'blue': t3, 'green': t4, 'lightblue': t5, 'lime': t6}
+    team_colors = {'blue': t1, 'blue': t2, 'green': t3, 'green': t4, 'red': t5, 'red': t6}
 
     for color, team in team_colors.items():
         if team in school_tot_totals['School'].values:

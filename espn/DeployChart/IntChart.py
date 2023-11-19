@@ -22,7 +22,7 @@ def IntBySchool(t1, t2, t3, t4, t5, t6):
         title='Total Interceptions by School',
         labels={'INT': 'Total Interceptions', 'School': 'School'},
         color='INT',  # Color bars based on the number of interceptions
-        color_continuous_scale='reds',  # Use a red color scale
+        color_continuous_scale='greys',  # Use a red color scale
         range_color=[school_int_totals['INT'].min(), school_int_totals['INT'].max()],  # Match color scale range to data
     )
 
@@ -37,7 +37,7 @@ def IntBySchool(t1, t2, t3, t4, t5, t6):
         coloraxis_colorbar_ticktext=['Low', 'High'],
     )
 
-    # Update layout with dotted lines based on user input
+# Update layout with dotted lines based on user input
     def update_dotted_lines(selected_schools):
         shapes = []
         annotations = []
@@ -45,9 +45,17 @@ def IntBySchool(t1, t2, t3, t4, t5, t6):
         for school in selected_schools:
             # Check if the selected school is in the data
             if school in school_int_totals['School'].values:
-                color = 'black'  # Use black for existing schools
+                if school == t1 or school == t2:
+                    # selected team
+                    color = 'blue'
+                elif school == t3 or school == t4:
+                    # teams that selected team do good vs
+                    color = 'green'
+                elif school == t5 or school == t6:
+                    # teams that selected team do bad vs
+                    color = 'red'
             else:
-                color = 'red'  # Use red for non-existing schools
+                color = 'white'  # Use for non-existing schools
 
             shape = {
                 'type': 'line',
@@ -74,12 +82,12 @@ def IntBySchool(t1, t2, t3, t4, t5, t6):
 
         return shapes, annotations
 
-    # Specify the schools you want lines for
-    selected_schools = [t1, t2, t3, t4, t5, t6]  # Replace with your selected schools
+    # Specify the schools 
+    selected_schools = [t1, t2, t3, t4, t5, t6]
 
     # Add lines and annotations for all selected schools
     shapes, annotations = update_dotted_lines(selected_schools)
-    fig.update_layout(shapes=shapes, annotations=annotations)
+    fig.update_layout(shapes=shapes, annotations=annotations, legend_tracegroupgap=20)
 
     # Show the interactive plot
     fig.show()

@@ -12,7 +12,6 @@ from RunningChart import *
 from ScoreChart import *
 from dash.dependencies import Input, Output, State
 
-
 # Load the data
 NCAA_df = pd.read_csv("/espn/data/defense.csv")
 
@@ -22,8 +21,15 @@ grouped_data = NCAA_df.groupby('School').sum().reset_index()
 # Add a symbol column with a football emoji for each school
 grouped_data['symbol'] = '🏈'  # You can replace this with the emoji or symbol you prefer
 
+# Generate random colors for each category
+category_colors = {
+    stat: f'rgb({random.randint(0, 255)}, {random.randint(0, 255)}, {random.randint(0, 255)})' 
+    for stat in ['SOLO', 'AST', 'TOT', 'SACK', 'YDS', 'PD', 'INT', 'LNG', 'TD', 'FF']
+}
+
 # Generate random colors for each school
-grouped_data['Color'] = ['#%02X%02X%02X' % (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)) for _ in range(len(grouped_data))]
+grouped_data['Color'] = ['#%02X%02X%02X' % (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)) 
+                         for _ in range(len(grouped_data))]
 
 # Create a Dash app
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
@@ -37,7 +43,7 @@ colors = {
 app.layout = html.Div(style={'backgroundColor': 'black', 'color': colors['text']}, children=[
     dbc.NavbarSimple(
         children=[
-            dbc.NavItem(dbc.NavLink("About", href="#")),
+            dbc.NavItem(dbc.NavLink("About", href="https://davis-ty.github.io/ESPN/")),
             dbc.NavItem(dbc.NavLink("Contact", href="https://davis-ty.github.io/repository/")),
         ],
         brand="Football Defensive Stats",
@@ -45,38 +51,11 @@ app.layout = html.Div(style={'backgroundColor': 'black', 'color': colors['text']
         color="primary",
         dark=True,
     ),
-    html.H1(children='Football Defensive Stats', style={'textAlign': 'center', 'color': 'yellow'}),
-
-    html.Div([
-        dcc.Dropdown(
-            id='team-dropdown-1',
-            options=[{'label': team, 'value': team} for team in grouped_data['School']],
-            value='TeamA',
-            style={'width': '50%', 'margin': '20px auto', 'color': 'black', 'backgroundColor': 'black'},
-        ),
-        dcc.Dropdown(
-            id='team-dropdown-2',
-            options=[{'label': team, 'value': team} for team in grouped_data['School']],
-            value='TeamB',
-            style={'width': '50%', 'margin': '20px auto', 'color': 'black', 'backgroundColor': 'black'},
-        ),
-    ], style={'margin': '20px'}),
+    html.H1(children='2023 Football Defensive Stats', style={'textAlign': 'center', 'color': 'yellow'}),
 
     dcc.Graph(
-        id='radar-chart',
-        style={'backgroundColor': 'green'},  # Set background color of the radar chart
+        id='allD-chart',
     ),
-
-    # Additional HTML charts (initially hidden)
-    html.Div(id='int-chart', style={'display': 'none'}),
-    html.Div(id='passing-chart', style={'display': 'none'}),
-    html.Div(id='running-chart', style={'display': 'none'}),
-    html.Div(id='sack-chart', style={'display': 'none'}),
-    html.Div(id='score-chart', style={'display': 'none'}),
-    html.Div(id='tot-chart', style={'display': 'none'}),
-    html.Div(id='tot-hist-chart', style={'display': 'none'}),
-
-    
     html.Div([
         dcc.Dropdown(
             id='stat-dropdown',
@@ -107,13 +86,88 @@ app.layout = html.Div(style={'backgroundColor': 'black', 'color': colors['text']
 
     dcc.Graph(
         id='football-chart',
-    )
+    ),
+    html.Div([
+        dcc.Dropdown(
+            id='team-dropdown-1',
+            options=[{'label': team, 'value': team} for team in grouped_data['School']],
+            value='TeamA',
+            style={'width': '50%', 'margin': '20px auto', 'color': 'black', 'backgroundColor': 'black'},
+        ),
+        dcc.Dropdown(
+            id='team-dropdown-2',
+            options=[{'label': team, 'value': team} for team in grouped_data['School']],
+            value='TeamB',
+            style={'width': '50%', 'margin': '20px auto', 'color': 'black', 'backgroundColor': 'black'},
+        ),
+    ], style={'margin': '20px'}),
+
+    dcc.Graph(
+        id='radar-chart',
+        style={'backgroundColor': 'green'},  # Set background color of the radar chart
+    ),
+
+    # Additional HTML charts (initially hidden)
+    html.Div(id='int-chart', style={'display': 'none'}),
+    html.Div(id='passing-chart', style={'display': 'none'}),
+    html.Div(id='running-chart', style={'display': 'none'}),
+    html.Div(id='sack-chart', style={'display': 'none'}),
+    html.Div(id='score-chart', style={'display': 'none'}),
+    html.Div(id='tot-chart', style={'display': 'none'}),
+    html.Div(id='tot-hist-chart', style={'display': 'none'}),
 ])
+
+# Define callback to update the chart based on dropdown and slider interactions
+@app.callback(
+    Output('allD-chart', 'figure'),
+    [Input('allD-chart', 'relayoutData')]
+)
+def update_chart(relayoutData):
+    selected_stats = ['SOLO', 'AST', 'TOT', 'SACK', 'YDS', 'PD', 'INT', 'LNG', 'TD', 'FF']
+
+    # Create a copy of the original data to modify
+    updated_data = grouped_data.copy()
+
+    # Remove categories based on user interaction
+    if relayoutData is not None and 'xaxis.range[0]' in relayoutData:
+        min_val, max_val = relayoutData['xaxis.range[0]'], relayoutData['xaxis.range[1]']
+        selected_stats = [stat for stat in selected_stats if min_val <= updated_data[stat].sum() <= max_val]
+
+    # Set the values of teams below the threshold to zero
+    updated_data[selected_stats] = updated_data[selected_stats].where(updated_data[selected_stats] > 0, 0)
+
+    # Sort the data by the sum of selected categories in descending order
+    updated_data = updated_data.sort_values(by=selected_stats, ascending=[False] * len(selected_stats))
+
+    # Create a stacked bar chart with each category having its own color
+    fig = go.Figure()
+
+    for stat in selected_stats:
+        fig.add_trace(go.Bar(
+            x=updated_data['School'],
+            y=updated_data[stat],
+            name=stat,
+            marker=dict(color=category_colors[stat]),
+        ))
+
+    # Customize the layout
+    fig.update_layout(
+        barmode='stack',
+        plot_bgcolor='darkgreen',  # Set the background color to green for a football field
+        paper_bgcolor='rgba(0, 0, 0, 0)',  # Make the paper background transparent
+        font_color=colors['text'],
+        xaxis=dict(title='School', showgrid=False, zeroline=False),
+        yaxis=dict(title='Stats', showgrid=False, zeroline=False),
+    )
+
+    return fig
+
 # Define callback to update the radar chart based on selected teams
 @app.callback(
     Output('radar-chart', 'figure'),
     [Input('team-dropdown-1', 'value'),
-     Input('team-dropdown-2', 'value')]
+     Input('team-dropdown-2', 'value'),
+     ]
 )
 def update_radar_chart(team1, team2):
 
@@ -136,7 +190,6 @@ def update_radar_chart(team1, team2):
 
     # Trigger the update_additional_charts callback
     return fig
-
 
 # Define callback to update and show the additional HTML charts
 @app.callback(
@@ -236,8 +289,6 @@ def update_chart(selected_stat, scale_value):
 
     return fig
 
-# Run the app`
+# Run the app
 if __name__ == '__main__':
-
     app.run_server(debug=True)
-

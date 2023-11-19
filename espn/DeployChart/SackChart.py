@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 
-def plot_sack_totals_interactive( highlight_teams):
+def plot_sack_totals_interactive(highlight_teams):
     """
     Plot the total number of sacks by school in an interactive bar chart.
 
@@ -24,8 +24,12 @@ def plot_sack_totals_interactive( highlight_teams):
     # Sort the result in descending order by the 'TOT' column
     school_sack_totals = school_sack_totals.sort_values(by='SACK', ascending=False)
 
-    # Highlight specified teams in a different color
-    school_sack_totals['Color'] = school_sack_totals['School'].apply(lambda x: 'orange' if x in highlight_teams else 'skyblue')
+    # Assign colors based on the position in the highlight_teams list
+    color_mapping = {'blue': 'Non Included teams','purple':'selected teams', 'green': 'Bad Team', 'red': 'Good Team'}
+    school_sack_totals['Color'] = school_sack_totals['School'].apply(lambda x: color_mapping.get(
+        'green') if x == highlight_teams[0] or x == highlight_teams[1] else (
+            color_mapping.get('red') if x == highlight_teams[2] or x == highlight_teams[3] else
+            color_mapping.get('purple')))
 
     # Create an interactive bar chart using plotly express
     fig = px.bar(
@@ -51,3 +55,4 @@ def plot_sack_totals_interactive( highlight_teams):
     fig.write_html("/ESPN/SackFig.html")
 
     return fig
+
