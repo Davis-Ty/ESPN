@@ -27,7 +27,7 @@ Gain a competitive edge by studying the defensive performance of upcoming oppone
 
 Leverage historical defensive data to make predictions about future games. Analyzing trends and patterns can contribute to more accurate forecasts of team performance.
 
--  Fan Engagement:
+- Fan Engagement:
 
 Enhance fan engagement by providing visual and easily understandable defensive statistics. Fans can gain deeper insights into their favorite team's performance and engage in data-driven discussions.
 - Overall Team Performance:
@@ -73,14 +73,14 @@ How do two selected teams compare in terms of overall defensive performance and 
 - Opponent Vulnerabilities:
 
 What defensive weaknesses do upcoming opponents exhibit, and how can these be exploited strategically?
--Threshold Analysis:
+- Threshold Analysis:
 
 Which teams meet or exceed a user-defined threshold for a specific defensive category, and how does this impact their overall performance?
 - Game-specific Insights:
 
 How does a team's defensive performance vary from game to game, and are there patterns related to specific opponents?
 
--Fan Engagement:
+- Fan Engagement:
 
 What defensive statistics are most engaging for fans, and how can the program enhance fan understanding and interaction with the team's performance?
 
