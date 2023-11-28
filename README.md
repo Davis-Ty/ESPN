@@ -1,9 +1,12 @@
 # ESPN Data and Visual Analytics
 # DESCRIPTION 
 - update data
+  
 The provided Python program is designed for web scraping college football player statistics from ESPN's website. It employs a modular structure, utilizing various external functions and modules such as setDriver, UpdateCSV, scrape_header, week_finder, and get_url. The main function, scrape_players_and_stats, takes advantage of the BeautifulSoup library for HTML parsing and Selenium for automated browser interactions. Notable patterns include the handling of dynamic content through a while loop that clicks the "Show More" button until it's no longer available. The code demonstrates a systematic approach to collecting player names, schools, and statistics, grouping the latter by headers and saving the data to CSV files based on the URL. Additionally, the scrape_team_future_info function is designed to extract future team information, including details like away team, home team, time, TV information, and ticket details. The use of conditional statements helps determine the type of statistics being scraped based on the URL, directing the data to the appropriate CSV file. Overall, the program showcases efficient web scraping practices, organized code structure, and automation for data collection from dynamic web pages.
 
 - create charts
+
+
 The football analytics dashboard sources its data from a CSV file named "defense.csv," encompassing diverse defensive metrics across various college football teams. With a visually engaging dark-themed layout, the dashboard features a navigation bar housing links to "About" and "Contact" sections. The main dashboard section, titled "2023 Football Defensive Stats," showcases a variety of charts for visualizing defensive statistics.
 
 Among the primary charts, the stacked bar chart (id='allD-chart') presents aggregated defensive statistics for different college football teams, with interactive capabilities for potential data filtering based on the x-axis range. The scatter chart (id='football-chart') employs football symbols ('🏈') to represent each team, symbol size dynamically reflecting corresponding defensive statistic values. The radar chart (id='radar-chart') facilitates the comparison of selected defensive metrics for two chosen teams through polygons, illustrating performance across various defensive categories.
