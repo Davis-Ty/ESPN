@@ -34,32 +34,32 @@ def TotPlacement(t1, t2, t3, t4, t5, t6):
     )
 
     # Add vertical lines and annotations for each team's total tackles
-    team_colors = {'blue': t1, 'blue': t2, 'green': t3, 'green': t4, 'red': t5, 'red': t6}
+    team_colors = {'steelblue': t1, 'lightblue': t2, 'forestgreen': t3, 'limegreen': t4, 'darkred': t5, 'firebrick': t6}
 
     for color, team in team_colors.items():
-        if team in school_tot_totals['School'].values:
-            total_tackles = school_tot_totals.loc[school_tot_totals['School'] == team, 'TOT'].values[0]
-            fig.add_shape(
-                type='line',
-                x0=total_tackles,
-                x1=total_tackles,
-                y0=0,
-                y1=0.8,
-                xref='x',
-                yref='paper',
-                line=dict(color=color, dash='dash'),
-            )
-            
-            # Add annotation for the school name
-            fig.add_annotation(
-                x=total_tackles,
-                y=1.05,  # Adjust the y-coordinate for the annotation
-                xref='x',
-                yref='paper',
-                text=team,
-                showarrow=False,
-                font=dict(size=10),
-            )
+            if team in school_tot_totals['School'].values:
+                total_tackles = school_tot_totals.loc[school_tot_totals['School'] == team, 'TOT'].values[0]
+                fig.add_shape(
+                    type='line',
+                    x0=total_tackles,
+                    x1=total_tackles,
+                    y0=0,
+                    y1=0.8,
+                    xref='x',
+                    yref='paper',
+                    line=dict(color=color, dash='dash'),
+                )
+                
+                # Add annotation for the school name
+                fig.add_annotation(
+                    x=total_tackles,
+                    y=1.05,  # Adjust the y-coordinate for the annotation
+                    xref='x',
+                    yref='paper',
+                    text=team,
+                    showarrow=False,
+                    font=dict(size=10),
+                )
 
     # Add hover text for each school
     fig.update_traces(hovertext=school_tot_totals['School'])

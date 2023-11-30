@@ -1,9 +1,9 @@
-#load data
+# Load necessary libraries
 import pandas as pd
 import plotly.express as px
-from week_finder import *
+from week_finder import get_college_football_week
 
-def Score_Diff(away_team1,away_team2 ):
+def Score_Diff(away_team1, away_team2):
     # Define the range of weeks you want to consider
     start_week = 0
     end_week = get_college_football_week() - 1
@@ -11,22 +11,32 @@ def Score_Diff(away_team1,away_team2 ):
     # Create an empty list to store DataFrames for each week
     all_team_games = []
 
-    # Assuming school_td_totals['School'] is a list of teams
+    # Iterate through the specified teams
     for team in [away_team1, away_team2]:
         # Iterate through the specified weeks
         for week in range(start_week, end_week + 1):
             file_path = f'data/week{week}.csv'
-            # Load data for the current week with the specified encoding
-            current_week_data = pd.read_csv(file_path, encoding='ISO-8859-1')
-
-            # Filter the games involving the current team and append to the list
-            team_games = current_week_data[current_week_data['Away Team'] == team].copy()
-            team_games['Score Difference'] = team_games['Away Team Score'] - team_games['Home Team Score']
             
-            # Add the week information to the DataFrame
-            team_games['Week'] = week
+            try:
+                # Load data for the current week with the specified encoding
+                current_week_data = pd.read_csv(file_path, encoding='ISO-8859-1')
 
-            all_team_games.append(team_games[['Team', 'Away Team', 'Away Team Score', 'Home Team', 'Home Team Score', 'Score Difference', 'Week']])
+                # Filter the games involving the current team and append to the list
+                team_games = current_week_data[(current_week_data['Away Team'] == team) | (current_week_data['Home Team'] == team)].copy()
+                
+                if not team_games.empty:
+                    team_games['Score Difference'] = team_games.apply(
+                        lambda row: row['Away Team Score'] - row['Home Team Score'] if row['Away Team'] == team else row['Home Team Score'] - row['Away Team Score'],
+                        axis=1
+                    )
+
+                    # Add the week information to the DataFrame
+                    team_games['Week'] = week
+
+                    all_team_games.append(team_games[['Team', 'Away Team', 'Away Team Score', 'Home Team', 'Home Team Score', 'Score Difference', 'Week']])
+            except FileNotFoundError:
+                # Handle missing files gracefully
+                print(f"File not found for week {week}")
 
     # Concatenate all DataFrames to create a single DataFrame for all teams
     all_teams_result_df = pd.concat(all_team_games)
@@ -35,8 +45,6 @@ def Score_Diff(away_team1,away_team2 ):
     fig = px.line(all_teams_result_df, x='Week', y='Score Difference', color='Home Team', markers=True,
                 title='Week-by-Week Score Difference for Selected Teams',
                 labels={'Score Difference': 'Score Difference', 'Week': 'Week'})
-                
-
 
     # Add annotations for the 'Away Team' names
     for index, row in all_teams_result_df.iterrows():
@@ -49,6 +57,10 @@ def Score_Diff(away_team1,away_team2 ):
 
     # Show the plot
     fig.show()
-    # Display the interactive plot
+
+    # Save the interactive plot as an HTML file
     fig.write_html("/ESPN/ScoreFig.html")
+
     return fig
+
+

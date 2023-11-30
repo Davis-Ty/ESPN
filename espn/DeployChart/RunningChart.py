@@ -1,7 +1,6 @@
 from week_finder import *
-from IntChart import *
-from TotChart import *
-from SackChart import *
+import pandas as pd
+import plotly.express as px
 
 def RushLeader_Score_Diff(team1, team2):
     start_week = 0
@@ -69,20 +68,23 @@ def RushLeader_Score_Diff(team1, team2):
     Rushing_leaders_to_include = Rushing_leader_counts[Rushing_leader_counts >= 2].index
     selected_teams_Rushing_leader_df = selected_teams_Rushing_leader_df[selected_teams_Rushing_leader_df['RushingLeader'].isin(Rushing_leaders_to_include)]
    
-    # Plotting the line chart for RushingLeaderScore over the weeks for selected teams using plotly
+    # Identify players who played more than one game
+    players_more_than_one_game = selected_teams_Rushing_leader_df.groupby('RushingLeader')['Week'].nunique()
+    players_more_than_one_game = players_more_than_one_game[players_more_than_one_game > 1].index
+    
+    # Create a chart with team name and players' names in the hover tooltip
     fig_selected_teams = px.line(selected_teams_Rushing_leader_df, x='Week', y='RushingLeaderScore',
                                 color='Team_IN', line_group='RushingLeader', markers=True,
                                 title=f'RushingLeaderScore Over Weeks for {team1} and {team2}',
                                 labels={'RushingLeaderScore': 'RushingLeaderScore', 'Week': 'Week'},
-                                hover_data=['status', 'vs', 'Team_IN'])
-
+                                hover_data=['status', 'vs', 'Team_IN', 'RushingLeader'])
+    
     fig_selected_teams.update_traces(
-        hovertemplate='Week: %{x}<br>vs: %{customdata[1]}<br>Status: %{customdata[0]}<br>RushingLeaderScore: %{y}<br> Team: %{customdata[2]}'
+        hovertemplate='Week: %{x}<br>vs: %{customdata[1]}<br>Status: %{customdata[0]}<br>RushingLeaderScore: %{y}<br> Team: %{customdata[2]}<br>RushingLeader: %{customdata[3]}'
     )
 
-    # Show the plot for RushingLeaderScore over weeks for selected teams with 'vs' and 'Team' in the hover tooltip
+    # Show the plot for RushingLeaderScore over weeks for selected teams with 'vs', 'Team', and 'RushingLeader' in the hover tooltip
     fig_selected_teams.show()
     
     # Display the interactive plot
     fig_selected_teams.write_html("/ESPN/RushingFig.html")
-

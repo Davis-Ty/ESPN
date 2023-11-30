@@ -1,3 +1,5 @@
+from DefensePlacement import *
+from ScoreChart import *
 from week_finder import *
 from IntChart import *
 from TotChart import *
@@ -133,7 +135,8 @@ def PassLeader_Score_Diff(team1, team2):
     
     highlight_teams = [team1, team2, team2_highest_home_team, team1_highest_home_team, team2_lowest_home_team,
                        team1_lowest_home_team]
-    
+    Score_Diff(team1, team2 )
+    TotHist()
     return fig_selected_teams, IntBySchool(team1, team2, team2_highest_home_team, team1_highest_home_team,
                                            team2_lowest_home_team, team1_lowest_home_team), TotPlacement(team1, team2,
                                                                                                         team2_highest_home_team,
